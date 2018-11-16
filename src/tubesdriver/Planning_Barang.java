@@ -20,8 +20,12 @@ public class Planning_Barang extends Planning{
         
         setNamaBarang(Nama_Barang);
         setHarga(Harga);
-        //setEstimasi(Estimasi);
+        for(int i = 0 ; i < 10 ; i++){
+            System.out.println("aaaaaaa : "+i);
+        }
         setDuit(Duit);
+        
+        
         
         
     }
