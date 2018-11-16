@@ -5,7 +5,7 @@
  */
 package tubesdriver;
 
-import jdk.management.resource.internal.TotalResourceContext;
+
 
 /**
  *
@@ -56,14 +56,9 @@ public class Tanggal {
     /// Mendapatkan estimasi waktu yang diperlukan dari tgl selesai - tgl mulai
     public static int getEstimateTimeHari(Tanggal mulai , Tanggal selesai){
         
-        int tahun = selesai.tahun - mulai.tahun;
-      
-        int bulan;
-        if(selesai.bulan < mulai.bulan){
-            bulan = (selesai.bulan+12) - mulai.bulan;
-        }else{
-            bulan = selesai.bulan - mulai.bulan;
-        }
+        Tanggal tgl = getEstimateTime(mulai, selesai);
+        
+        int bulan = tgl.bulan + (12*tgl.tahun);
         
         int totalTanggal = 0;
         int currentBulan = mulai.bulan;
