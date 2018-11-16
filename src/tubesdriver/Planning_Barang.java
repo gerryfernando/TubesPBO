@@ -14,10 +14,13 @@ public class Planning_Barang extends Planning{
     private int Harga;
     private int Duit;
     
-    public Planning_Barang(String Nama_Barang,int Harga,int Estimasi,int Duit){
+    public Planning_Barang(String Nama_Barang,int Harga, Tanggal mulai , Tanggal selesai ,int Duit){
+        Tanggal_Mulai = mulai;
+        Tanggal_Selesai = selesai;
+        
         setNamaBarang(Nama_Barang);
         setHarga(Harga);
-        setEstimasi(Estimasi);
+        //setEstimasi(Estimasi);
         setDuit(Duit);
         
         
@@ -44,25 +47,19 @@ public class Planning_Barang extends Planning{
     }
 
     public void setDuit(int Gaji) {
-        int cek = getHarga()/getEstimasi();
+        int cek = getHarga()/getEstimasiBulan();
             if (Gaji-cek <= 600000){
                 System.out.println("Maaf Uang anda tidak cukup untuk melakukan rencana ini...");
             }else {
                 this.Duit = cek;
-            }
-            
-            
-                
-                
+            }         
   }
     
 
-    public int getEstimasi() {
-        return Estimasi;
-    }
-
-    public void setEstimasi(int Estimasi) {
-        this.Estimasi = Estimasi;
+    public int getEstimasiBulan() {
+        Tanggal dateEst = super.getEstimasi();
+        int estTime = dateEst.bulan + (12*dateEst.tahun);
+        return estTime;
     }
     
 

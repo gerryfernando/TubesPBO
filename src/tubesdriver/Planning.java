@@ -10,9 +10,20 @@ package tubesdriver;
  * @author Yulius Langobelen
  */
 public abstract class Planning {
-   protected int Estimasi;
-   protected int Tanggal_Mulai;
-   protected int Tanggal_Selesai;
+
+
+   protected Tanggal Tanggal_Mulai;
+   
+
+   protected Tanggal Tanggal_Selesai;
+   
+   public Tanggal getEstimasi(){
+      return Tanggal.getEstimateTime(Tanggal_Mulai, Tanggal_Selesai);
+   }
+   
+   public int getEstimasiHari(){
+      return Tanggal.getEstimateTimeHari(Tanggal_Mulai, Tanggal_Selesai);
+   }
    
    public abstract String Show(); 
    
