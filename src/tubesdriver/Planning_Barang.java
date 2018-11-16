@@ -22,6 +22,8 @@ public class Planning_Barang extends Planning{
         setHarga(Harga);
         for(int i = 0 ; i < 10 ; i++){
             System.out.println("aaaaaaa : "+i);
+            System.out.println("bbbbbbbbbb");
+            System.out.println("asdasdasd");
         }
         setDuit(Duit);
         
