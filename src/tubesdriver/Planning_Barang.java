@@ -12,12 +12,14 @@ package tubesdriver;
 public class Planning_Barang extends Planning{
     private String Nama_Barang;
     private int Harga;
+    
     private int Duit;
+    private int uangTerkumpul;
     
     public Planning_Barang(String Nama_Barang,int Harga, Tanggal mulai , Tanggal selesai ,int Duit){
         Tanggal_Mulai = mulai;
         Tanggal_Selesai = selesai;
-        
+        uangTerkumpul = 0;
         setNamaBarang(Nama_Barang);
         setHarga(Harga);
         setDuit(Duit);
