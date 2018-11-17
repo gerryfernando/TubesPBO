@@ -17,8 +17,9 @@ public class TubesDriver {
     public static void main(String[] args) {
         System.out.println("Welcome to Manajemen Keuangan");
         
-        User usr = new User("Firdi", 19, 'L', "Telkom univ");
-        Planning_Barang pb = new Planning_Barang("Laptop", 5000000, new Tanggal(1,2018), new Tanggal(12,2018), 0);
+        User usr = new User("Firdi", 19, 'L', "Telkom univ",2000000,0);
+        Planning_Barang pb = new Planning_Barang("Laptop", 5000000, new Tanggal(1,2018), new Tanggal(12,2018), usr.getGaji());
+        
     }
     
 }

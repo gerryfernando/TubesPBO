@@ -15,7 +15,7 @@ import java.util.*;
 public  abstract class Transaksi {
     private int Nominal;
     private String Detail;
-    private String Tanggal;
+    private Tanggal Tgl;
     
     
     public abstract int Operation(int Saldo);
@@ -52,14 +52,12 @@ public  abstract class Transaksi {
     /**
      * @return the Tanggal
      */
-    public String getTanggal() {
-        return Tanggal;
+    public Tanggal getTanggal() {
+        return Tgl;
     }
 
-    /**
-     * @param Tanggal the Tanggal to set
-     */
-    public void setTanggal(String Tanggal) {
-        this.Tanggal = Tanggal;
+ 
+    public void setTanggal(Tanggal tgl) {
+        this.Tgl = tgl;
     }
 }
