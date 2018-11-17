@@ -16,13 +16,13 @@ public class Planning_Barang extends Planning{
     private int Duit;
     private int uangTerkumpul;
     
-    public Planning_Barang(String Nama_Barang,int Harga, Tanggal mulai , Tanggal selesai ,int Duit){
+    public Planning_Barang(String Nama_Barang,int Harga, Tanggal mulai , Tanggal selesai ,int Gaji){
         Tanggal_Mulai = mulai;
         Tanggal_Selesai = selesai;
         uangTerkumpul = 0;
         setNamaBarang(Nama_Barang);
         setHarga(Harga);
-        setDuit(Duit);
+        setDuit(Gaji);
         
         
         
@@ -33,16 +33,16 @@ public class Planning_Barang extends Planning{
         return Nama_Barang;
     }
 
-    public void setNamaBarang(String Nama_Barang) {
-        this.Nama_Barang = Nama_Barang;
+    public void setNamaBarang(String nama) {
+        this.Nama_Barang = nama;
     }
 
     public int getHarga() {
         return Harga;
     }
 
-    public void setHarga(int Harga) {
-        this.Harga = Harga;
+    public void setHarga(int harga) {
+        this.Harga = harga;
     }
 
     public int getDuit() {

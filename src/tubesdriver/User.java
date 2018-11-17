@@ -39,12 +39,14 @@ public class User {
         this.Saldo = Saldo;
     }
     
-    public User (String nama,int usia,char gender,String address){
+    public User (String nama,int usia,char gender,String address ,int gaji,int saldo){
         this.address=address;
         this.name=name;
         this.gender=gender;
         this.usia=usia;
         history =  new ArrayList<Transaksi>();
+        setGaji(gaji);
+        setSaldo(saldo);
     }
 
     /**
