@@ -16,21 +16,7 @@ public  abstract class Transaksi {
     private int Nominal;
     private String Detail;
     private String Tanggal;
-    List <Transaksi> history;
-
     
-    public void add_History (Transaksi t){
-        
-        history.add(t);
-        
-    }
-    
-    public void showHistory(){
-        
-        for (Transaksi o : history){
-            System.out.println(o.toString());
-        }
-    }
     
     public abstract int Operation(int Saldo);
     

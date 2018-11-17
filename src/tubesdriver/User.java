@@ -5,6 +5,9 @@
  */
 package tubesdriver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Yulius Langobelen
@@ -16,6 +19,9 @@ public class User {
     private String address;
     private int Gaji;
     private int Saldo;
+    
+    Planning plan;
+    List <Transaksi> history;
 
     public int getGaji() {
         return Gaji;
@@ -38,6 +44,7 @@ public class User {
         this.name=name;
         this.gender=gender;
         this.usia=usia;
+        history =  new ArrayList<Transaksi>();
     }
 
     /**
@@ -99,6 +106,20 @@ public class User {
     public void setAddress(String address) {
         if(address!=""){
         this.address = address;
+        }
+    }
+    
+    
+    public void add_History (Transaksi t){
+        
+        history.add(t);
+        
+    }
+    
+    public void showHistory(){
+        
+        for (Transaksi o : history){
+            System.out.println(o.toString());
         }
     }
     
