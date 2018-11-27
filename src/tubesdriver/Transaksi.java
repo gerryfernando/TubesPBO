@@ -16,7 +16,15 @@ public  abstract class Transaksi {
     private int Nominal;
     private String Detail;
     private Tanggal Tgl;
-    
+    private int idT;
+
+    public int getIdT() {
+        return idT;
+    }
+
+    public void setIdT(int idT) {
+        this.idT = idT;
+    }
     
     public abstract int Operation(int Saldo);
     
