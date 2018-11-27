@@ -9,12 +9,12 @@ package tubesdriver;
  *
  * @author Yulius Langobelen
  */
-public class Registrasi extends javax.swing.JPanel {
+public class RegistrasiGUI extends javax.swing.JPanel {
 
     /**
      * Creates new form Registrasi
      */
-    public Registrasi() {
+    public RegistrasiGUI() {
         initComponents();
     }
 
@@ -46,7 +46,7 @@ public class Registrasi extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         tfGajiReg = new javax.swing.JTextField();
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -116,7 +116,7 @@ public class Registrasi extends javax.swing.JPanel {
                                 .addComponent(btnCancelReg)
                                 .addGap(49, 49, 49)
                                 .addComponent(btnOkReg)))
-                        .addGap(0, 110, Short.MAX_VALUE))
+                        .addGap(0, 112, Short.MAX_VALUE))
                     .addComponent(tfGajiReg))
                 .addContainerGap())
         );
@@ -153,7 +153,7 @@ public class Registrasi extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(tfGajiReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelReg)
                     .addComponent(btnOkReg))
