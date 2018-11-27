@@ -11,5 +11,4 @@ package tubesdriver;
  */
 public interface Edit_Uang {
     void editable(int uang);
-    
 }
