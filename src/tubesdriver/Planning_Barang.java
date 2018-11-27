@@ -66,6 +66,6 @@ public class Planning_Barang extends Planning{
 
     @Override
     public String Show() {
-        return "Selamat Planning Berhasil Dibuat"+ "\nPenyimpanan Uang Perbulan : "+getDuit() +"\nDengan Estimasi Waktu "+getEstimasi()+"\nUang Akan Cukup Untuk Membeli "+getNamaBarang();
+        return "Selamat Planning Berhasil Dibuat"+ "\nPenyimpanan Uang Perbulan : "+getDuit() +"\nDengan Estimasi Waktu "+getEstimasiBulan()+" bulan"+"\nUang Akan Cukup Untuk Membeli "+getNamaBarang();
     }
 }
