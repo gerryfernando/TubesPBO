@@ -9,10 +9,6 @@ package tubesdriver;
  *
  * @author Yulius Langobelen
  */
-public interface Edit_Uang {
-    void editable(int uang);
-<<<<<<< HEAD
+public class User_Planning {
     
-=======
->>>>>>> 83a574a9719d41c614f2bb177311bf1eff287145
 }
