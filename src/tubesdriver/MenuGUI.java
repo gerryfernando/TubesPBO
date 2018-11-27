@@ -5,6 +5,9 @@
  */
 package tubesdriver;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Yulius Langobelen
@@ -170,6 +173,12 @@ public class MenuGUI extends javax.swing.JFrame {
     
     public void setProfile(String s){
         taProfile.setText(s);
+    }
+    public JButton getBtnLogout(){
+        return btnLogout;
+    }
+    public void addActionListener(ActionListener e){
+        btnLogout.addActionListener(e);
     }
     
 

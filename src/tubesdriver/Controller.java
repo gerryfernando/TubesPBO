@@ -23,15 +23,45 @@ public class Controller implements ActionListener{
         viewLog=new LoginGUI();
         viewReg=new RegistrasiGUI();
         viewMenu=new MenuGUI();
+        viewLog.addActionListener(this);
+        viewLog.setVisible(true);
         viewReg.addActionListener(this);
-        viewReg.setVisible(true);
+        viewMenu.addActionListener(this);
         
         
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object source = e.getSource();
+        if(!source.equals(viewMenu.getBtnLogout())){
+            if(source.equals(viewLog.getBtnReg())){
+                viewLog.setVisible(false);
+                viewReg.setVisible(true);
+                if(source.equals(viewReg.getBtnOk())){
+                    String nama = viewReg.getName();
+                    String username = viewReg.getUsername();
+                    String password = viewReg.getPassword();
+                    int usia = viewReg.getUsia();
+                    String gender = viewReg.getGender();
+                    String alamat = viewReg.getAlamat();
+                    int gaji = viewReg.getGaji();
+                    model.addUser(nama, username, nama, usia, gender, alamat, gaji);
+                    model.loadUserProfile();
+                    viewReg.setVisible(false);
+                    viewLog.setVisible(true);
+
+                    if(viewLog.getBtnLogin().isSelected()){
+                        int i = 0;
+//                        while(i==0){
+//                            if(viewLog.getUsername()== )
+//                        }
+                    }
+                
+                }
+            }
+        
+        }
     }
     
 }

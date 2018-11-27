@@ -35,7 +35,7 @@ public class RegistrasiGUI extends javax.swing.JPanel {
         public int getUsia(){
             return Integer.parseInt(tfUsiaReg.getText());
         }
-        public String Gender(){
+        public String getGender(){
             int i = cbGenderReg.getSelectedIndex();
             return cbGenderReg.getItemAt(i);
         }

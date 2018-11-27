@@ -18,9 +18,13 @@ public class Application {
     public Application(){
         userList=new ArrayList();
     }
-    public void addUser(String nama,String username,
-            String pass,int usia, String gender
-            ,String Alamat,int gaji){
+    public void addUser(String nama,String username,String pass,int usia, String gender,String Alamat,int gaji){
+        User u = new User(nama,username,pass,usia,gender,Alamat,gaji);
         
+            
+        
+    }
+    public ArrayList<User> loadUserProfile(){
+        return userList;
     }
 }
