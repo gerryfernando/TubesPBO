@@ -39,8 +39,6 @@ public class TubesDriver {
         usr.editable(5000000);
         System.out.println(usr.getSaldo());
         
-       
-
     }
     
 }
