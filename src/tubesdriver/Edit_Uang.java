@@ -11,8 +11,5 @@ package tubesdriver;
  */
 public interface Edit_Uang {
     void editable(int uang);
-<<<<<<< HEAD
-    
-=======
->>>>>>> 83a574a9719d41c614f2bb177311bf1eff287145
+
 }
