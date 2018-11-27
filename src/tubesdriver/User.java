@@ -12,16 +12,57 @@ import java.util.List;
  *
  * @author Yulius Langobelen
  */
-public class User {
+public class User implements Edit_Uang{
     private String name;
     private int usia;
     private char gender;
     private String address;
     private int Gaji;
     private int Saldo;
+    private Planning plan;
+    private Transaksi t;
+    public List <Transaksi> history;
+    public User (String nama,int usia,char gender,String address ,int gaji){
+        this.address=address;
+        this.name=name;
+        this.gender=gender;
+        this.usia=usia;
+        history =  new ArrayList<Transaksi>();
+        setGaji(gaji);
+        setSaldo(gaji);
+    }
+
+    public Transaksi getTransaksi() {
+        return t;
+    }
+
+    public void setTransaksi(Transaksi t) {
+        this.t = t;
+        setSaldo(t.Operation(Saldo));
+    }
+     
+    public void setPlanning(Planning p){
+         this.plan=p;
+     }
+    public Planning getPlanning(){
+         return this.plan;
+     }
+    public String getName() {
+        return name;
+    }
     
-    Planning plan;
-    List <Transaksi> history;
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        if(name!=""){
+        this.name = name;
+        }
+    }
+
+
+    
 
     public int getGaji() {
         return Gaji;
@@ -39,32 +80,7 @@ public class User {
         this.Saldo = Saldo;
     }
     
-    public User (String nama,int usia,char gender,String address ,int gaji,int saldo){
-        this.address=address;
-        this.name=name;
-        this.gender=gender;
-        this.usia=usia;
-        history =  new ArrayList<Transaksi>();
-        setGaji(gaji);
-        setSaldo(saldo);
-    }
-
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        if(name!=""){
-        this.name = name;
-        }
-    }
-
+   
     /**
      * @return the usia
      */
@@ -123,6 +139,11 @@ public class User {
         for (Transaksi o : history){
             System.out.println(o.toString());
         }
+    }
+
+    @Override
+    public void editable(int uang) {
+      setSaldo(uang);   
     }
     
     

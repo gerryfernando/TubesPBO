@@ -10,19 +10,36 @@ package tubesdriver;
  * @author Yulius Langobelen
  */
 public class Pendapatan extends Transaksi {
-    int total_Saldo;
-    public Pendapatan(int Saldo){
+    int total_Saldo=0;
+    public Pendapatan(int Saldo,int nominal,Tanggal tgl,String Detail){
+        
+        super.setTanggal(tgl);
+        super.setDetail(Detail);
+        super.setNominal(nominal);
         Operation(Saldo);
-        setTanggal(super.getTanggal());
-        setDetail(super.getDetail());
+        setTotalSaldo(Saldo);
+
     }
 
+    public int getTotalSaldo() {
+        return total_Saldo;
+    }
+
+    public void setTotalSaldo(int total_Saldo) {
+        this.total_Saldo = total_Saldo;
+    }
+    
     @Override
     public int Operation(int total_Saldo) {
-        return total_Saldo+=super.getNominal();       
+        return getTotalSaldo()+super.getNominal();       
     }
+    
+    public int getSaldoBaru(){
+        return Operation(getTotalSaldo());
+    }
+    
     @Override
     public String toString() {
-        return "Tanggal : "+getTanggal()+"\nPemasukan : "+super.getNominal()+"\nTotal Saldo : "+this.Operation(total_Saldo);
+        return "Waktu Transaksi(Bln-Thn) : "+getTanggal().bulan+"-"+getTanggal().tahun+"\nPemasukan : "+super.getNominal()+"\nTotal Saldo : "+getSaldoBaru()+"\nDetail : "+super.getDetail();
                 }
     }

@@ -30,11 +30,12 @@ public class Tanggal {
         }else{
             bulan = 1;
         }
-        if(thn > 0){
+        if(thn >= 0){
             tahun = thn;
         }else{
-            tahun = 2018;
+            tahun = 0;
         }
+        
     }
     
     /// Mendapatkan estimasi waktu yang diperlukan dari tgl selesai - tgl mulai
@@ -48,8 +49,8 @@ public class Tanggal {
         }else{
             bulan = selesai.bulan - mulai.bulan;
         }
-        
-        return new Tanggal(bulan , tahun);
+        Tanggal b =  new Tanggal(bulan , tahun);
+        return b;
     }
     
     

@@ -12,7 +12,7 @@ package tubesdriver;
 public class Planning_Harian extends Planning {
     private int duit ;
     private int duithari;
-    public Planning_Harian(int duit , User usr , Tanggal mulai , Tanggal selesai){
+    public Planning_Harian(int duit , Tanggal mulai , Tanggal selesai){
         setTanggalMulai(mulai);
         setTanggalSelesai(selesai);
         setDuit(duit);
