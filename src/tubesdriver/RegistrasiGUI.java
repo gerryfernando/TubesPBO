@@ -5,6 +5,9 @@
  */
 package tubesdriver;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Yulius Langobelen
@@ -18,6 +21,53 @@ public class RegistrasiGUI extends javax.swing.JPanel {
         initComponents();
     }
 
+    
+    @Override
+        public String getName(){
+            return tfNamaReg.getText();
+        }
+        public String getUsername(){
+            return tfUsernameReg.getText();
+        }
+        public String getPassword(){
+            return pfPasswordReg.getText();
+        }
+        public int getUsia(){
+            return Integer.parseInt(tfUsiaReg.getText());
+        }
+        public String Gender(){
+            int i = cbGenderReg.getSelectedIndex();
+            return cbGenderReg.getItemAt(i);
+        }
+        public String getAlamat(){
+            return tfAlamatReg.getText();
+        }
+        public int getGaji(){
+            return Integer.parseInt(tfGajiReg.getText());
+        }
+        public void resetview(){
+            tfNamaReg.setText("");
+            tfUsernameReg.setText("");
+            pfPasswordReg.setText("password");
+            tfUsiaReg.setText("");
+            cbGenderReg.setSelectedIndex(0);
+            tfAlamatReg.setText("");
+            tfGajiReg.setText("");
+        }
+        public JButton getBtnOk(){
+            return btnOkReg;
+        }
+        public JButton getBtnCancel(){
+            return btnCancelReg;
+        }
+        public void addActionListener(ActionListener e){
+            btnOkReg.addActionListener(e);
+            btnCancelReg.addActionListener(e);
+        }
+        
+        
+        
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +87,6 @@ public class RegistrasiGUI extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         tfNamaReg = new javax.swing.JTextField();
         tfUsernameReg = new javax.swing.JTextField();
-        tfPassReg = new javax.swing.JTextField();
         tfUsiaReg = new javax.swing.JTextField();
         cbGenderReg = new javax.swing.JComboBox<>();
         tfAlamatReg = new javax.swing.JTextField();
@@ -45,6 +94,7 @@ public class RegistrasiGUI extends javax.swing.JPanel {
         btnOkReg = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         tfGajiReg = new javax.swing.JTextField();
+        pfPasswordReg = new javax.swing.JPasswordField();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -69,8 +119,6 @@ public class RegistrasiGUI extends javax.swing.JPanel {
 
         tfUsernameReg.setText("Masukan Username");
 
-        tfPassReg.setText("Masukan Pasword");
-
         tfUsiaReg.setText("Masukan Usia");
 
         cbGenderReg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
@@ -86,6 +134,8 @@ public class RegistrasiGUI extends javax.swing.JPanel {
         jLabel8.setText("Gaji");
 
         tfGajiReg.setText("Masukan Gaji");
+
+        pfPasswordReg.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -106,9 +156,9 @@ public class RegistrasiGUI extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfNamaReg)
                     .addComponent(tfUsernameReg)
-                    .addComponent(tfPassReg)
                     .addComponent(tfUsiaReg)
                     .addComponent(tfAlamatReg)
+                    .addComponent(tfGajiReg)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbGenderReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,7 +167,7 @@ public class RegistrasiGUI extends javax.swing.JPanel {
                                 .addGap(49, 49, 49)
                                 .addComponent(btnOkReg)))
                         .addGap(0, 112, Short.MAX_VALUE))
-                    .addComponent(tfGajiReg))
+                    .addComponent(pfPasswordReg))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -135,8 +185,8 @@ public class RegistrasiGUI extends javax.swing.JPanel {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPassReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(pfPasswordReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfUsiaReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,10 +242,10 @@ public class RegistrasiGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField pfPasswordReg;
     private javax.swing.JTextField tfAlamatReg;
     private javax.swing.JTextField tfGajiReg;
     private javax.swing.JTextField tfNamaReg;
-    private javax.swing.JTextField tfPassReg;
     private javax.swing.JTextField tfUsernameReg;
     private javax.swing.JTextField tfUsiaReg;
     // End of variables declaration//GEN-END:variables

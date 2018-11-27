@@ -62,9 +62,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="tfNamaReg" max="32767" attributes="0"/>
                       <Component id="tfUsernameReg" max="32767" attributes="0"/>
-                      <Component id="tfPassReg" alignment="0" max="32767" attributes="0"/>
                       <Component id="tfUsiaReg" alignment="0" max="32767" attributes="0"/>
                       <Component id="tfAlamatReg" max="32767" attributes="0"/>
+                      <Component id="tfGajiReg" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="cbGenderReg" min="-2" max="-2" attributes="0"/>
@@ -76,7 +76,7 @@
                           </Group>
                           <EmptySpace min="0" pref="112" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="tfGajiReg" alignment="0" max="32767" attributes="0"/>
+                      <Component id="pfPasswordReg" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -99,8 +99,8 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tfPassReg" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pfPasswordReg" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -185,11 +185,6 @@
             <Property name="text" type="java.lang.String" value="Masukan Username"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfPassReg">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Masukan Pasword"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="tfUsiaReg">
           <Properties>
             <Property name="text" type="java.lang.String" value="Masukan Usia"/>
@@ -237,6 +232,11 @@
         <Component class="javax.swing.JTextField" name="tfGajiReg">
           <Properties>
             <Property name="text" type="java.lang.String" value="Masukan Gaji"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="pfPasswordReg">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
           </Properties>
         </Component>
       </SubComponents>
