@@ -12,19 +12,33 @@ import java.util.ArrayList;
  * @author Yulius Langobelen
  */
 public class Application {
+    
     private ArrayList<User> userList;
     private Database db;
     
     public Application(){
         userList=new ArrayList();
+        db=new Database();
+        db.connect();
     }
     public void addUser(String nama,String username,String pass,int usia, String gender,String Alamat,int gaji){
         User u = new User(nama,username,pass,usia,gender,Alamat,gaji);
-        
-            
-        
+        db.saveUser(u);
     }
-    public ArrayList<User> loadUserProfile(){
-        return userList;
+    public void loadUserProfile(){
+        userList=db.loadUser();
     }
+    public String getUserprofile(String username){
+        String s="";
+        for (User u :userList){
+            if(u.getUsername().equals(username)){
+                s += "Nama : "+u.getName()+"\nUsia : "+u.getUsia()+"\nJenis Kelamin : "+u.getGender()+"\nAlamat : "+u.getAddress()+"\nGaji : "+u.getGaji()+"\nSaldo : "+u.getSaldo();
+            }
+        }
+        return s;
+    }
+    public boolean isLogin(String username,String password){
+        return db.cekLogin(username,password);
+    }
+   
 }

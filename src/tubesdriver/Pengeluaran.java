@@ -10,9 +10,10 @@ package tubesdriver;
  * @author Yulius Langobelen
  */
 public class Pengeluaran extends Transaksi{
-   int total_Saldo=0;
-    public Pengeluaran(int Saldo,int nominal,Tanggal tgl,String Detail){
-        
+    int total_Saldo=0;
+    public Pengeluaran(int id,int Saldo,int nominal,String username,Tanggal tgl,String Detail){
+        super.setUsername(username);
+        super.setIdT(id);
         super.setTanggal(tgl);
         super.setDetail(Detail);
         super.setNominal(nominal);

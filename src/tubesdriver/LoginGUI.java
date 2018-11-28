@@ -57,6 +57,11 @@ public class LoginGUI extends javax.swing.JFrame {
 
         btnLogin.setBackground(new java.awt.Color(0, 153, 0));
         btnLogin.setText("LOGIN");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         pfPasswordLog.setText("Password");
 
@@ -67,6 +72,11 @@ public class LoginGUI extends javax.swing.JFrame {
         jLabel4.setText("belum daftar? Klik tombol di bawah");
 
         btnRegLog.setText("Registrasi");
+        btnRegLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegLogActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,6 +153,16 @@ public class LoginGUI extends javax.swing.JFrame {
     private void tfUsernameLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsernameLogActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfUsernameLogActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        new MenuGUI().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnRegLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegLogActionPerformed
+        new RegistrasiGUI().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegLogActionPerformed
 
     /**
      * @param args the command line arguments

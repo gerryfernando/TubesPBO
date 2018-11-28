@@ -15,6 +15,10 @@ public class TubesDriver {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Application a = new Application();
+        Controller c = new Controller(a);
+        
 //        System.out.println("Welcome to Manajemen Keuangan");
 //        
 //        User usr = new User("Firdi", 19, 'L', "Telkom univ",2000000);

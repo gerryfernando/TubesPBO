@@ -11,8 +11,9 @@ package tubesdriver;
  */
 public class Pendapatan extends Transaksi {
     int total_Saldo=0;
-    public Pendapatan(int Saldo,int nominal,Tanggal tgl,String Detail){
-        
+    public Pendapatan(int id,int Saldo,int nominal,String username,Tanggal tgl,String Detail){
+        super.setIdT(id);
+        super.setUsername(username);
         super.setTanggal(tgl);
         super.setDetail(Detail);
         super.setNominal(nominal);
