@@ -155,8 +155,7 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_tfUsernameLogActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        new MenuGUI().setVisible(true);
-        this.setVisible(false);
+       
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegLogActionPerformed
