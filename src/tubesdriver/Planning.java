@@ -13,7 +13,15 @@ public abstract class Planning {
 
 
    protected Tanggal Tanggal_Mulai;
-   
+   protected int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
    protected Tanggal Tanggal_Selesai;
    

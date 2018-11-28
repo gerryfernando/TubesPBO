@@ -5,6 +5,9 @@
  */
 package tubesdriver;
 
+import Database.Application;
+import GUI.Controller;
+
 /**
  *
  * @author Yulius Langobelen
@@ -17,7 +20,12 @@ public class TubesDriver {
     public static void main(String[] args) {
         
         Application a = new Application();
+        
+        
         Controller c = new Controller(a);
+        
+        
+        
         
 //        System.out.println("Welcome to Manajemen Keuangan");
 //        

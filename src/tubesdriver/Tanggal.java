@@ -13,7 +13,6 @@ package tubesdriver;
  */
 public class Tanggal {
     
-   
     public int bulan;
     public int tahun;
     
@@ -38,7 +37,7 @@ public class Tanggal {
         
     }
     
-    /// Mendapatkan estimasi waktu yang diperlukan dari tgl selesai - tgl mulai
+    /// Mendapatkan estimasi waktu yang diperlukan dari tgl selesai - tgl mulai(bulan)
     public static Tanggal getEstimateTime(Tanggal mulai , Tanggal selesai){
         
         int tahun = selesai.tahun - mulai.tahun;
@@ -54,7 +53,7 @@ public class Tanggal {
     }
     
     
-    /// Mendapatkan estimasi waktu yang diperlukan dari tgl selesai - tgl mulai
+    /// Mendapatkan estimasi waktu yang diperlukan dari tgl selesai - tgl mulai(hari)
     public static int getEstimateTimeHari(Tanggal mulai , Tanggal selesai){
         
         Tanggal tgl = getEstimateTime(mulai, selesai);
@@ -64,7 +63,7 @@ public class Tanggal {
         int totalTanggal = 0;
         int currentBulan = mulai.bulan;
         int currentTahun = mulai.tahun;
-        for(int i= 0 ; i < bulan ; i ++){
+        for(int i = 0 ; i < bulan ; i ++){
             totalTanggal += getTotalTanggal(currentBulan, currentTahun);
             currentBulan++;
             if(currentBulan > 12){
