@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubesdriver;
+package GUI;
 
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -101,10 +101,12 @@ public class MenuGUI extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PROFILE");
 
+        taProfile.setEditable(false);
         taProfile.setColumns(20);
         taProfile.setRows(5);
         jScrollPane1.setViewportView(taProfile);
 
+        taPlanningUser.setEditable(false);
         taPlanningUser.setColumns(20);
         taPlanningUser.setRows(5);
         jScrollPane2.setViewportView(taPlanningUser);

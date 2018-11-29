@@ -23,10 +23,6 @@ public class Planning_Barang extends Planning{
         setNamaBarang(Nama_Barang);
         setHarga(Harga);
         setDuit(Gaji);
-        
-        
-        
-        
     }
 
     public String getNamaBarang() {

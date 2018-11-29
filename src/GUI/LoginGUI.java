@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubesdriver;
+package GUI;
 
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -48,7 +48,6 @@ public class LoginGUI extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGIN");
 
-        tfUsernameLog.setText("Username");
         tfUsernameLog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfUsernameLogActionPerformed(evt);
@@ -62,8 +61,6 @@ public class LoginGUI extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-
-        pfPasswordLog.setText("Password");
 
         jLabel2.setText("Username");
 
@@ -159,8 +156,7 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegLogActionPerformed
-        new RegistrasiGUI().setVisible(true);
-        this.setVisible(false);
+   
     }//GEN-LAST:event_btnRegLogActionPerformed
 
     /**

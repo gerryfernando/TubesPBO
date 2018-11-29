@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubesdriver;
+package Database;
 
+import Database.Database;
 import java.util.ArrayList;
+import tubesdriver.User;
 
 /**
  *
@@ -32,7 +34,7 @@ public class Application {
         String s="";
         for (User u :userList){
             if(u.getUsername().equals(username)){
-                s += "Nama : "+u.getName()+"\nUsia : "+u.getUsia()+"\nJenis Kelamin : "+u.getGender()+"\nAlamat : "+u.getAddress()+"\nGaji : "+u.getGaji()+"\nSaldo : "+u.getSaldo();
+                s =s+ "Nama : "+u.getName()+"\nUsia : "+u.getUsia()+"\nJenis Kelamin : "+u.getGender()+"\nAlamat : "+u.getAddress()+"\nGaji : "+u.getGaji()+"\nSaldo : "+u.getSaldo();
             }
         }
         return s;

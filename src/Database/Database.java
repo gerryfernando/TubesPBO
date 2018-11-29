@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubesdriver;
+package Database;
 
 /**
  *
@@ -13,6 +13,12 @@ import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import tubesdriver.Pendapatan;
+import tubesdriver.Pengeluaran;
+import tubesdriver.Planning;
+import tubesdriver.Tanggal;
+import tubesdriver.Transaksi;
+import tubesdriver.User;
 
 public class Database {
     
@@ -130,18 +136,20 @@ public class Database {
     }
          
         public boolean cekLogin(String username,String password){
-        try {
-            boolean b=false;
-            String query="select password from user where username='"+username+"'";
+        boolean b=false;
+
+            try {
+            String query="select * from user where username='"+username+"'";
             rs=state.executeQuery(query);
-            System.out.println(rs.getString("password"));
+            while(rs.next()){
             if(rs.getString("password").equals(password)){
                 b= true;
+            }
             }
         } catch (SQLException ex) {
             System.out.println("login error : "+ex.getMessage());   
         }
-        return false;
+        return b;
          }
     }
 
