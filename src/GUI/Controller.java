@@ -21,12 +21,15 @@ public class Controller{
     private LoginGUI viewLog;
     private RegisGUI viewReg;
     private MenuGUI viewMenu;
+    private PlanningGUI viewPlan;
+    private TransaksiGUI viewT;
     
     public Controller(Application model){
         this.model=model;
         viewLog=new LoginGUI();
         viewLog.setVisible(true);
         viewReg=new RegisGUI();
+        viewT = new TransaksiGUI();
 
         viewLog.getBtnLogin().addActionListener(new ActionListener() {
             @Override
@@ -39,24 +42,32 @@ public class Controller{
                     viewMenu.setVisible(true);
 
                     viewMenu.setProfile(model.getUserprofile(username));
-                    viewMenu.setPlaning(model.loadUserPlanning(username));
+                    viewMenu.setPlaning(model.loadUserPlanning(username));    
                     
+                    viewMenu.getBtnLogout().addActionListener(new ActionListener(){
+
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                               System.out.println("LogOut Pressed");
+                               viewMenu.setVisible(false);
+                               viewLog.setVisible(true);
+                        }
+                    });
                     
-                    
-                    
+                    viewMenu.getBtnTransaksi().addActionListener(new ActionListener(){
+                        
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            System.out.println("transaksi pressed");
+                            viewMenu.setVisible(false);
+                            viewT.setVisible(true);
+                        }
+                        
+                        
+                        
+                    });
                     
          }
-        viewMenu.getBtnLogout().addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                   System.out.println("LogOut Pressed");
-                   viewMenu.setVisible(false);
-                   viewLog.setVisible(true);
-                   
-            }
-                  });
-
             }            
         });
         
@@ -68,7 +79,6 @@ public class Controller{
                     viewLog.setVisible(false);
                     viewReg.setVisible(true);     
                     
-                    
                         viewReg.getBtnOk().addActionListener(new ActionListener(){
                         @Override
                         public void actionPerformed(ActionEvent e) {
@@ -76,68 +86,19 @@ public class Controller{
                             System.out.println("Ok pressed");
                             viewReg.setVisible(false);
                             viewLog.setVisible(true);
-                           
-            viewLog.getBtnLogin().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println(model.isLogin(viewLog.getUsername(), viewLog.getPassword()));
-                String username=viewLog.getUsername();
-                if(model.isLogin(viewLog.getUsername(), viewLog.getPassword())){
-                    viewMenu = new MenuGUI();
-                    viewLog.setVisible(false);
-                    viewMenu.setVisible(true);
-
-                    viewMenu.setProfile(model.getUserprofile(username));
-                    viewMenu.setPlaning(model.loadUserPlanning(username));
-                    
-                    
-                    
-                    
-                    
-         }
-        viewMenu.getBtnLogout().addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                   System.out.println("LogOut Pressed");
-                   viewMenu.setVisible(false);
-                   viewLog.setVisible(true);
-                   
-            }
-                  });
-
-            }            
-        });
                         }});
                         
                         viewReg.getBtnCancel().addActionListener(new ActionListener(){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println("cancel pressed");
-                        viewReg.setVisible(false);
-                        viewLog.setVisible(true);
-                    }
-                            
-                        
-                        });
-                        
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            System.out.println("cancel pressed");
+                            viewReg.setVisible(false);
+                            viewLog.setVisible(true);
+                        }
+                            });
             }
             }
-         
-         
-         
-         
-         );
-         
-      
-         
-         
-        
-        
-        
-        
-   
-    
+         );   
 }
 }
             

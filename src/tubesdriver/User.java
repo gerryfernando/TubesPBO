@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Yulius Langobelen
  */
-public class User implements Edit_Uang{
+public class User {
     private String name;
     private int usia;
     private String gender;
@@ -115,10 +115,6 @@ public class User implements Edit_Uang{
         }
     }
 
-    @Override
-    public void editable(int uang) {
-      setSaldo(uang);   
-    }
     
     
 }
