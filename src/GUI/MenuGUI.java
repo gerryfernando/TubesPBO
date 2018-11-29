@@ -57,6 +57,11 @@ public class MenuGUI extends javax.swing.JFrame {
         btnPlanningMenu.setText("Planning");
 
         btnHistoryMenu.setText("History");
+        btnHistoryMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoryMenuActionPerformed(evt);
+            }
+        });
 
         btnLogout.setBackground(new java.awt.Color(204, 0, 0));
         btnLogout.setText("Logout");
@@ -168,6 +173,10 @@ public class MenuGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnHistoryMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHistoryMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -176,6 +185,16 @@ public class MenuGUI extends javax.swing.JFrame {
     public void setProfile(String s){
         taProfile.setText(s);
     }
+    public JButton getBtnTransaksi(){
+            return btnTransaksiMenu;
+        }
+     public JButton getBtnPlanning(){
+            return btnPlanningMenu;
+        }
+      public JButton getBtnHistory(){
+            return btnHistoryMenu;
+        }
+    
     public void setPlaning(String s){
         taPlanningUser.setText(s);
     }
