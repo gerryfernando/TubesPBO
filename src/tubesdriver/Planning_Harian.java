@@ -12,12 +12,20 @@ package tubesdriver;
 public class Planning_Harian extends Planning {
     private int duit,id ;
     private int duithari;
-    public Planning_Harian(int id,int duit , Tanggal mulai , Tanggal selesai){
-        setTanggalMulai(mulai);
-        setTanggalSelesai(selesai);
+    private int Estimasi;
+    public Planning_Harian(int id,int duit, int estimasi){
+        setEstimasi(estimasi);
         setDuit(duit);
         setDuitHari(duit);
         setId(id);
+    }
+
+    public int getEstimasi() {
+        return Estimasi;
+    }
+
+    public void setEstimasi(int Estimasi) {
+        this.Estimasi = Estimasi;
     }
 
    
@@ -29,13 +37,8 @@ public class Planning_Harian extends Planning {
         this.id = id;
     }
     
-    public void setTanggalMulai(Tanggal Tanggal_Mulai ){
-        super.Tanggal_Mulai = Tanggal_Mulai;
-        
-    }
-    public void setTanggalSelesai(Tanggal Tanggal_Selesai ){
-        super.Tanggal_Selesai= Tanggal_Selesai;
-    }
+   
+    
 
     public void setDuit(int duit){
         this.duit=duit;
@@ -49,7 +52,7 @@ public class Planning_Harian extends Planning {
         return duithari;
     }
     public void setDuitHari(int duit){
-        this.duithari=getDuit()/super.getEstimasiHari();
+        this.duithari=getDuit()/getEstimasi();
     }
     
     

@@ -9,6 +9,9 @@ import Database.Database;
 import java.util.ArrayList;
 
 import tubesdriver.Planning;
+import tubesdriver.Planning_Barang;
+import tubesdriver.Planning_Harian;
+import tubesdriver.Tanggal;
 import tubesdriver.User;
 
 /**
@@ -28,16 +31,28 @@ public class Application {
         loadUserProfile();
     }
     public void addUser(String nama,String username,String pass,int usia, String gender,String Alamat,int gaji){
+        
         User u = new User(nama,username,pass,usia,gender,Alamat,gaji);
         db.saveUser(u);
     }
+    
+    
+    public void addPlanningB(int id,String username,String Nama_Barang,int Harga ,int estimasibln,int tabungbln,int Gaji){
+        Planning_Barang pb = new Planning_Barang(id, username, Nama_Barang, Harga, estimasibln, tabungbln, Gaji);
+    }
+    
+     public void addPlanningH(int id,int duit, int estimasi){
+        Planning_Harian ph = new Planning_Harian(id, duit, estimasi);
+    }
+    
+    
+    
     public void loadUserProfile(){
         userList=db.loadUser();
     }
     
-    public String loadUserPlanning(String username){
-       return db.loadPlanning(username);
-    }
+
+    
     
     public String getUserprofile(String username){
         String s="";

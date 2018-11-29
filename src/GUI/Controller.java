@@ -53,7 +53,7 @@ public class Controller{
                     viewMenu.setVisible(true);
 
                     viewMenu.setProfile(model.getUserprofile(username));
-                    viewMenu.setPlaning(model.loadUserPlanning(username));    
+                  
                     
                     viewMenu.getBtnLogout().addActionListener(new ActionListener(){
                         @Override
@@ -213,11 +213,12 @@ public class Controller{
                         viewReg.getBtnOk().addActionListener(new ActionListener(){
                         @Override
                         public void actionPerformed(ActionEvent e) {
-
+                  
                             model.addUser(viewReg.getName(), viewReg.getUsername(),viewReg.getPassword(), viewReg.getUsia(), viewReg.getGender(), viewReg.getAlamat(), viewReg.getGaji());
                             System.out.println("Ok pressed");
                             viewReg.setVisible(false);
-                            viewLog.setVisible(true);
+                            viewLog.setVisible(true); 
+                               
                         }});
                         
                         viewReg.getBtnCancel().addActionListener(new ActionListener(){

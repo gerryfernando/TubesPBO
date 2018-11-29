@@ -17,16 +17,15 @@ public  abstract class Transaksi {
     private String Detail;
     private Tanggal Tgl;
     private int idT;
+
     private String username;
 
     public void setUsername(String username) {
         this.username = username;
     }
     
-    
-    public String getUsername(){
-        return username;
-    }
+
+
     public int getIdT() {
         return idT;
     }
@@ -34,6 +33,13 @@ public  abstract class Transaksi {
     public void setIdT(int idT) {
         this.idT = idT;
     }
+
+    
+    public String getUsername(){
+        return username;
+    }
+ 
+    
     
     public abstract int Operation(int Saldo);
     

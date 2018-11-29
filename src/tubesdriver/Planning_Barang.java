@@ -13,17 +13,19 @@ public class Planning_Barang extends Planning{
     private String Nama_Barang;
     private int Harga;
     private int id;
+    private int EstimasiBulan;
+   
     
     private int Duit;
     private int uangTerkumpul;
     
-    public Planning_Barang(int id,String username,String Nama_Barang,int Harga, Tanggal mulai , Tanggal selesai ,int estimasibln,int tabungbln,int Gaji){
-        Tanggal_Mulai = mulai;
-        Tanggal_Selesai = selesai;
+    public Planning_Barang(int id,String username,String Nama_Barang,int Harga ,int estimasibln,int tabungbln,int Gaji){
+        
         uangTerkumpul = 0;
         setNamaBarang(Nama_Barang);
         setHarga(Harga);
         setDuit(Gaji);
+        setId(id);
     }
 
 
@@ -59,9 +61,10 @@ public class Planning_Barang extends Planning{
     
 
     public int getEstimasiBulan() {
-        Tanggal dateEst = super.getEstimasi();
-        int estTime = dateEst.bulan + (12*dateEst.tahun);
-        return estTime;
+       return EstimasiBulan;
+    }
+    public void setEstimasiBulan(int estimasi){
+        this.EstimasiBulan = estimasi;
     }
     
 
