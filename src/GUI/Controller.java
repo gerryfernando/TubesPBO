@@ -21,8 +21,11 @@ public class Controller{
     private LoginGUI viewLog;
     private RegisGUI viewReg;
     private MenuGUI viewMenu;
+
     private PlanningGUI viewPlan;
     private TransaksiGUI viewT;
+
+
     
     public Controller(Application model){
         this.model=model;
@@ -40,6 +43,9 @@ public class Controller{
                     viewMenu = new MenuGUI();
                     viewLog.setVisible(false);
                     viewMenu.setVisible(true);
+
+                
+
 
                     viewMenu.setProfile(model.getUserprofile(username));
                     viewMenu.setPlaning(model.loadUserPlanning(username));    
@@ -67,8 +73,8 @@ public class Controller{
                         
                     });
                     
+         }          
          }
-            }            
         });
         
          viewLog.getBtnReg().addActionListener(new ActionListener() {
@@ -82,6 +88,7 @@ public class Controller{
                         viewReg.getBtnOk().addActionListener(new ActionListener(){
                         @Override
                         public void actionPerformed(ActionEvent e) {
+
                             model.addUser(viewReg.getName(), viewReg.getUsername(),viewReg.getPassword(), viewReg.getUsia(), viewReg.getGender(), viewReg.getAlamat(), viewReg.getGaji());
                             System.out.println("Ok pressed");
                             viewReg.setVisible(false);
@@ -101,9 +108,3 @@ public class Controller{
          );   
 }
 }
-            
-        
-    
-    
-    
-

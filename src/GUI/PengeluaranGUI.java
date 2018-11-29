@@ -5,6 +5,9 @@
  */
 package GUI;
 
+
+import javax.swing.JButton;
+
 /**
  *
  * @author Yulius Langobelen
@@ -119,10 +122,26 @@ public class PengeluaranGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-  
+    public String getDetail(){
+            return tfDetailPengeluaran.getText();
+        }
+        public int getNominal(){
+            return Integer.parseInt(tfNominalPengeluaran.getText());
+        }
+       
+        
+        public void resetview(){
+           tfDetailPengeluaran.setText("");
+          tfNominalPengeluaran.setText("");
+        }
+       
+        public JButton getBtnOk(){
+            return btnOkPengeluaran;
+        }
+        public JButton getBtnCancel(){
+            return btnBackPengeluaran;
+        }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackPengeluaran;

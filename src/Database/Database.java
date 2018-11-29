@@ -16,8 +16,10 @@ import java.util.logging.Logger;
 import tubesdriver.Pendapatan;
 import tubesdriver.Pengeluaran;
 import tubesdriver.Planning;
+
 import tubesdriver.Planning_Barang;
 import tubesdriver.Planning_Harian;
+
 import tubesdriver.Tanggal;
 import tubesdriver.Transaksi;
 import tubesdriver.User;
@@ -213,9 +215,12 @@ public class Database {
             return null;
         }  
     }
-         
+
+  
+
     public boolean cekLogin(String username,String password){
         connect();
+
         boolean b=false;
 
             try {
@@ -229,8 +234,10 @@ public class Database {
         } catch (SQLException ex) {
             System.out.println("login error : "+ex.getMessage());   
         }
+
         disconnect();
         return b;
         }
+
     }
 

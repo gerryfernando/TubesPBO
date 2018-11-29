@@ -7,6 +7,7 @@ package Database;
 
 import Database.Database;
 import java.util.ArrayList;
+
 import tubesdriver.Planning;
 import tubesdriver.User;
 
@@ -43,7 +44,9 @@ public class Application {
         String s="";
         for (User u :userList){
             if(u.getUsername().equals(username)){
-                s = s + "Nama : "+u.getName()+"\nUsia : "+u.getUsia()+"\nJenis Kelamin : "+u.getGender()+"\nAlamat : "+u.getAddress()+"\nGaji : "+u.getGaji()+"\nSaldo : "+u.getSaldo();
+              s =s+ "Nama : "+u.getName()+"\nUsia : "+u.getUsia()+"\nJenis Kelamin : "+u.getGender()+"\nAlamat : "+u.getAddress()+"\nGaji : "+u.getGaji()+"\nSaldo : "+u.getSaldo();
+                
+           
             }
         }
         return s;

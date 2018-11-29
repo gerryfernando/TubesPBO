@@ -5,6 +5,10 @@
  */
 package GUI;
 
+
+import javax.swing.JButton;
+
+
 /**
  *
  * @author Yulius Langobelen
@@ -100,6 +104,14 @@ public class TransaksiGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    
+     public JButton getBtnPendapatan(){
+            return btnPendapatanTransaksi;
+        }
+        public JButton getBtnPengeluaran(){
+            return btnPengeluaranTransaksi;
+        }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackTransaksi;
     private javax.swing.JButton btnPendapatanTransaksi;
