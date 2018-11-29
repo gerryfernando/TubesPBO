@@ -6,6 +6,7 @@
 package GUI;
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,10 +38,13 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
         namabarang = new javax.swing.JTextField();
         hargabarang = new javax.swing.JTextField();
         bulanbarang = new javax.swing.JTextField();
-        btnokbarang = new javax.swing.JButton();
+        btnDonebarang = new javax.swing.JButton();
         btnbackbarang = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textbarang = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        tfIdPlan = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +77,8 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
 
         bulanbarang.setText("Masukan Jumlah Bulan");
 
-        btnokbarang.setBackground(new java.awt.Color(0, 153, 0));
-        btnokbarang.setText("Ok");
+        btnDonebarang.setBackground(new java.awt.Color(0, 153, 0));
+        btnDonebarang.setText("Done");
 
         btnbackbarang.setBackground(new java.awt.Color(255, 0, 51));
         btnbackbarang.setText("Cancel");
@@ -87,6 +91,12 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
         textbarang.setColumns(20);
         textbarang.setRows(5);
         jScrollPane1.setViewportView(textbarang);
+
+        jLabel2.setText("ID_Planning");
+
+        tfIdPlan.setEditable(false);
+
+        btnSubmit.setText("Submit");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,16 +114,20 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(hargabarang)
-                                    .addComponent(namabarang, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))))
+                                    .addComponent(namabarang, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                                    .addComponent(tfIdPlan))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnbackbarang)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnokbarang, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(btnDonebarang, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,24 +136,29 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tfIdPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(namabarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hargabarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bulanbarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnokbarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnbackbarang, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDonebarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnbackbarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
         );
 
@@ -190,6 +209,14 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
             return Integer.parseInt(bulanbarang.getText());
         }
 
+    public int getIdPlan() {
+        return Integer.parseInt(tfIdPlan.getText());
+    }
+
+   public void setIdPlan(int s) {
+        tfIdPlan.setText(""+s);
+    }
+        
         
         public void resetview(){
            namabarang.setText("");
@@ -197,24 +224,28 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
            bulanbarang.setText("");
         }
        
-        public JButton getBtnOk(){
-            return btnokbarang;
+        public JButton getBtnDone(){
+            return btnDonebarang;
         }
         public JButton getBtnCancel(){
             return btnbackbarang;
         }
-        
-         public void toStringBarang(String s){
-        textbarang.setText(s);
+        public JButton getBtnSubmit(){
+            return btnSubmit;
+        }
+        public void toStringBarang(String s){
+            textbarang.setText(s);
           } 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDonebarang;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnbackbarang;
-    private javax.swing.JButton btnokbarang;
     private javax.swing.JTextField bulanbarang;
     private javax.swing.JTextField hargabarang;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -222,5 +253,6 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField namabarang;
     private javax.swing.JTextArea textbarang;
+    private javax.swing.JTextField tfIdPlan;
     // End of variables declaration//GEN-END:variables
 }

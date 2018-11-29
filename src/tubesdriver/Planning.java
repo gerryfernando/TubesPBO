@@ -12,14 +12,14 @@ package tubesdriver;
 public abstract class Planning {
 
 
-   protected int id;
+   protected int id=1;
 
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = id++;
     }
 
   

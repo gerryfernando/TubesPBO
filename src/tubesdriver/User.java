@@ -38,6 +38,10 @@ public class User {
         this.plan=null;
     }
 
+    public User() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }

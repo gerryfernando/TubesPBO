@@ -19,9 +19,10 @@ public class Planning_Barang extends Planning{
     private int Duit;
     private int uangTerkumpul;
     
-    public Planning_Barang(int id,String username,String Nama_Barang,int Harga ,int estimasibln,int tabungbln,int Gaji){
+    public Planning_Barang(int id,String username,String Nama_Barang,int Harga ,int estimasibln,int Gaji){
         
         uangTerkumpul = 0;
+        setEstimasiBulan(estimasibln);
         setNamaBarang(Nama_Barang);
         setHarga(Harga);
         setDuit(Gaji);

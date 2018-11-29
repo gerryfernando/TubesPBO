@@ -52,7 +52,9 @@ public class Planning_Harian extends Planning {
         return duithari;
     }
     public void setDuitHari(int duit){
-        this.duithari=getDuit()/getEstimasi();
+        
+        this.duithari=Math.round(getDuit()/(getEstimasi()*1.0f));
+        
     }
     
     
