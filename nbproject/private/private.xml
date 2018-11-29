@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/TubesDriver/src/tubesdriver/Pengeluaran.java</file>
             <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/TubesDriver/src/tubesdriver/Transaksi.java</file>
             <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/TubesDriver/src/tubesdriver/Tanggal.java</file>
@@ -14,6 +15,29 @@
             <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/TubesDriver/src/GUI/HistoryGUI.java</file>
             <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/TubesDriver/src/tubesdriver/TubesDriver.java</file>
             <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/TubesDriver/src/GUI/Controller.java</file>
+=======
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Harian.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/MenuGUI.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Membeli_Barang.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/build/built-jar.properties</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/User.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Database.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Rencana.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/RegistrasiGUI.form~HEAD</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Edit_Uang.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/LoginGUI.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/RegistrasiGUI.java~HEAD</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/TransaksiGUI.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/RegistrasiGUI.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Planning_Harian.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/PengeluaranGUI.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Transaksi.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/TubesDriver.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Application.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Planning_Barang.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Planning.java</file>
+            <file>file:/D:/Semester%203/PBO/Tugas%20Besar%20PBO/IF-41-11_Aplikasi%20Sistem%20Manajemen%20Keuangan_1301174304_1301170387_1301174119/TubesPBO/src/tubesdriver/Pendapatan.java</file>
+>>>>>>> a7a0fa2c40b27cf08fe27e17ce9309f8571356ef
         </group>
     </open-files>
 </project-private>
