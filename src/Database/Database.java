@@ -16,6 +16,10 @@ import java.util.logging.Logger;
 import tubesdriver.Pendapatan;
 import tubesdriver.Pengeluaran;
 import tubesdriver.Planning;
+
+import tubesdriver.Planning_Barang;
+import tubesdriver.Planning_Harian;
+
 import tubesdriver.Tanggal;
 import tubesdriver.Transaksi;
 import tubesdriver.User;
@@ -26,7 +30,8 @@ public class Database {
     private Connection con;
     private Statement state;
     private ResultSet rs;
-    
+    private ResultSet rs1;
+    private Statement stmt;
     public void connect() {
         
         try {
@@ -37,17 +42,30 @@ public class Database {
             con = DriverManager.getConnection(url, username, pass);
             state=con.createStatement();
             System.out.println("Connected");
-            
+            stmt=con.createStatement();
         }catch (SQLException ex) {
             System.out.println("Error : "+ex.getMessage());
                 }
             
+    }
+    
+    public void disconnect(){
+        if(con != null){
+            try{
+            con.close();
+            con = null;
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+            }
         }
+        
+    }
+   
 
     
     
     public ArrayList<Transaksi> loadHistory(String username){
-        
+        connect();
         try{
             
             ArrayList<Transaksi> listT = new ArrayList();
@@ -74,50 +92,110 @@ public class Database {
                }
                listT.add(t);
             }
+            disconnect();
             return listT;
         }
         catch (Exception ex) {
             System.out.println("Error di Tampilin History");
+            disconnect();
+            return null;
+        }
+        
+        
+    }
+    public void saveUser(User u){
+        connect();
+        try {
+            String query = "insert into user values('"+u.getName()+"','"+u.getUsername()+"','"+u.getPassword()+"','"+u.getUsia()+"','"+u.getGender()+"','"+u.getAddress()+"',"+u.getGaji()+","+u.getSaldo()+")";
+            state.execute(query);
+            System.out.println("saving user succeed");
+        } catch (SQLException ex) {
+            System.out.println("saving user error : "+ex.getMessage());        
+        }
+        disconnect();
+    }
+        
+    public String loadPlanning(String username){
+        connect();
+        try{
+            String query = "select * from planning where username='"+username+"'";
+            rs = state.executeQuery(query);
+            query = "select saldo from user where username = '"+username+"'";
+            rs1=stmt.executeQuery(query);
+            rs1.next();
+            int saldo = rs1.getInt(1);
+            String s = "";
+
+            while(rs.next()){
+                
+                int id = rs.getInt("id_planning");
+                String jenis = rs.getString("jenis_planning");
+                String mulai = rs.getString("Tanggal_Mulai");
+                String selesai = rs.getString("Tanggal_Selesai");
+                int pengeluaranHari = rs.getInt("pengeluaranHari");
+                int i=0;
+                String bulanmulai="";
+                String tahunmulai ="";
+                
+                while(mulai.charAt(i)!='-'){
+                    bulanmulai+=mulai.charAt(i);
+                    i++;
+                }
+                i=i+1;
+                while(i < mulai.length()){
+                    tahunmulai+=mulai.charAt(i);
+                    i++;
+                }                
+                i=0;
+                String bulanselesai="";
+                String tahunselesai ="";
+                while(selesai.charAt(i)!='-'){
+                    bulanselesai+=selesai.charAt(i);
+                    i++;
+                }
+                i=i+1;
+                while(i<selesai.length()){
+                    tahunselesai+=selesai.charAt(i);
+                    i++;
+                }  
+                if(jenis.equals("Planning Harian")){
+                    int estimasiHari = rs.getInt("estimasi_hari");
+                    Planning_Harian p = new Planning_Harian(id , saldo , new Tanggal(Integer.parseInt(bulanmulai),Integer.parseInt(tahunmulai)) , new Tanggal(Integer.parseInt(bulanselesai),Integer.parseInt(tahunselesai)));
+                    s = s + "Planning Harian : " + "\nID Planning : "+ p.getId() + "\n Pengeluaran yang disarankan : " +  
+                            p.getDuitHari() +" per bulan" + "\nBulan Mulai : "+mulai+"\nBulan Selesai : "+selesai
+                            +"\nEstimasi Hari : "+p.getEstimasiHari();
+
+                }else if(jenis.equals("Planning Barang")){
+                    int estimasiBln = rs.getInt("estimasi_bulan");
+                    String barang = rs.getString("nama_barang");
+                    int harga = rs.getInt("harga");
+                    int tabungan = rs.getInt("tabunganBarang");
+                    
+                    Planning_Barang p = new Planning_Barang(id, username, barang, harga, new Tanggal(Integer.parseInt(bulanmulai),Integer.parseInt(tahunmulai)) , new Tanggal(Integer.parseInt(bulanselesai),Integer.parseInt(tahunselesai)), estimasiBln, tabungan, saldo);
+                    s = s + "Planning Barang : "+"\nID Planning : "+p.getId()+"\nNama Barang : "+p.getNamaBarang()+
+                            "\nHarga Barang : "+p.getHarga()+"\nBulan Mulai : "+mulai+"\nBulan Selesai : "+selesai
+                            +"\nEstimasi Bulan : "+p.getEstimasiBulan()+"\nTabungan per Bulan : "+p.getDuit();
+                } 
+            }
+            disconnect();
+            return s;
+        }
+        catch (Exception ex) {
+            System.out.println("Error di Tampilin Planning "+ex.getMessage());
+            disconnect();
             return null;
         }
     }
-        public void saveUser(User u){
-          
-        try {
-            String query = "insert into user values('"+u.getName()+"','"+u.getUsername()+"','"+u.getPassword()+"','"+u.getUsia()+"','"+u.getGender()+"','"+u.getAddress()+"',"+u.getGaji()+","+u.getSaldo();
-            rs=state.executeQuery(query);
-            System.out.println("saving user succeed");
-        } catch (SQLException ex) {
-            System.out.println("saving user error : "+ex.getMessage());        }
-        }
         
-        public ArrayList<Planning> loadPlanning(){
-        try{
-            ArrayList<Planning> listP = new ArrayList();
-            String query = "select * from planning";
-            rs = state.executeQuery(query);
-            Planning p = new Planning() {
-                @Override
-                public String Show() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
-            listP.add(p);
-            return listP;
-        }
-        catch (Exception ex) {
-            System.out.println("Error di Tampilin Planning");
-            return null;
-        }
-        }
-        
-         public ArrayList<User> loadUser(){
+    public ArrayList<User> loadUser(){
+        connect();
         try{
             ArrayList<User> listU = new ArrayList();
             state = con.createStatement();
             String query = "select * from user";
             rs = state.executeQuery(query);
-            User u = new User(
+            while(rs.next()){
+                User u = new User(
                     rs.getString("nama"),
                     rs.getString("username"),
                     rs.getString("password"),
@@ -127,15 +205,22 @@ public class Database {
                     rs.getInt("gaji"));
             
             listU.add(u);
+            }
+            disconnect();
             return listU;
         }
         catch (Exception ex) {
             System.out.println("Error di LIst User");
+            disconnect();
             return null;
         }  
     }
-         
-        public boolean cekLogin(String username,String password){
+
+  
+
+    public boolean cekLogin(String username,String password){
+        connect();
+
         boolean b=false;
 
             try {
@@ -149,7 +234,10 @@ public class Database {
         } catch (SQLException ex) {
             System.out.println("login error : "+ex.getMessage());   
         }
+
+        disconnect();
         return b;
-         }
+        }
+
     }
 

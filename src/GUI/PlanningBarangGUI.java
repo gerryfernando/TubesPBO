@@ -178,6 +178,7 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
+     * 
      */  public String getNamaB(){
             return namabarang.getText();
         }
@@ -205,6 +206,7 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
          public void toStringBarang(String s){
         textbarang.setText(s);
           } 
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbackbarang;

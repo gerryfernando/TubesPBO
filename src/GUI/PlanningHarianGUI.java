@@ -5,7 +5,9 @@
  */
 package GUI;
 
+
 import javax.swing.JButton;
+
 
 /**
  *
@@ -164,6 +166,7 @@ public class PlanningHarianGUI extends javax.swing.JFrame {
         public void toStringBarang(String s){
         textharian.setText(s);
           } 
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

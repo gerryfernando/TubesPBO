@@ -10,14 +10,23 @@ package tubesdriver;
  * @author Yulius Langobelen
  */
 public class Planning_Harian extends Planning {
-    private int duit ;
+    private int duit,id ;
     private int duithari;
-    public Planning_Harian(int duit , Tanggal mulai , Tanggal selesai){
+    public Planning_Harian(int id,int duit , Tanggal mulai , Tanggal selesai){
         setTanggalMulai(mulai);
         setTanggalSelesai(selesai);
         setDuit(duit);
         setDuitHari(duit);
-        
+        setId(id);
+    }
+
+   
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     public void setTanggalMulai(Tanggal Tanggal_Mulai ){

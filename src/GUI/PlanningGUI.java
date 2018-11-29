@@ -5,7 +5,9 @@
  */
 package GUI;
 
+
 import javax.swing.JButton;
+
 
 /**
  *
@@ -88,6 +90,7 @@ public class PlanningGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
      public JButton getBtnBarang(){
             return btnbarang;
         }
@@ -98,6 +101,7 @@ public class PlanningGUI extends javax.swing.JFrame {
     
     
     
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbarang;
     private javax.swing.JButton btnharian;

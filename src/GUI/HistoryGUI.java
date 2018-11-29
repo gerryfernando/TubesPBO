@@ -104,6 +104,7 @@ public class HistoryGUI extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+
    public void setJenisT(String s , int row){
        tabelhistory.setValueAt(s , row, 1);
        
@@ -116,6 +117,9 @@ public class HistoryGUI extends javax.swing.JFrame {
    public void setTanggal(String s , int row){
        tabelhistory.setValueAt(s, row, 3);
    }
+
+   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbackhistory;

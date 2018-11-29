@@ -21,7 +21,7 @@ public class Controller{
     private LoginGUI viewLog;
     private RegisGUI viewReg;
     private MenuGUI viewMenu;
-  
+
     
     public Controller(Application model){
         this.model=model;
@@ -38,10 +38,29 @@ public class Controller{
                     viewMenu = new MenuGUI();
                     viewLog.setVisible(false);
                     viewMenu.setVisible(true);
-                    
+
+                
+
+
                     viewMenu.setProfile(model.getUserprofile(username));
-                    System.out.println(model.getUserprofile(username));
-                }
+                    viewMenu.setPlaning(model.loadUserPlanning(username));
+                    
+                          viewMenu.getBtnLogout().addActionListener(new ActionListener(){
+
+                                    @Override
+                                 public void actionPerformed(ActionEvent e) {
+                                 System.out.println("LogOut Pressed");
+                                 viewMenu.setVisible(false);
+                                 viewLog.setVisible(true);
+                   
+            }
+                  });
+                    
+                    
+                    
+         }
+  
+
             }            
         });
         
@@ -57,10 +76,13 @@ public class Controller{
                         viewReg.getBtnOk().addActionListener(new ActionListener(){
                         @Override
                         public void actionPerformed(ActionEvent e) {
+
+                            model.addUser(viewReg.getName(), viewReg.getUsername(),viewReg.getPassword(), viewReg.getUsia(), viewReg.getGender(), viewReg.getAlamat(), viewReg.getGaji());
                             System.out.println("Ok pressed");
                             viewReg.setVisible(false);
                             viewLog.setVisible(true);
-                        }});
+                           
+           
                         
                         viewReg.getBtnCancel().addActionListener(new ActionListener(){
                     @Override
@@ -73,20 +95,10 @@ public class Controller{
                         
                         });
                         
-            }
-            });
-         
-         
-        
-        
-        
-        
+          }
+                        
+          }); 
     }
-    
+  });
 }
-            
-        
-    
-    
-    
-
+}
