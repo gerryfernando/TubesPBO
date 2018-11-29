@@ -37,9 +37,10 @@ public class Controller{
                     viewMenu = new MenuGUI();
                     viewLog.setVisible(false);
                     viewMenu.setVisible(true);
-                    
+
                     viewMenu.setProfile(model.getUserprofile(username));
                     viewMenu.setPlaning(model.loadUserPlanning(username));
+                    
                     
                     
                     
@@ -52,6 +53,7 @@ public class Controller{
                    System.out.println("LogOut Pressed");
                    viewMenu.setVisible(false);
                    viewLog.setVisible(true);
+                   
             }
                   });
 
@@ -74,6 +76,38 @@ public class Controller{
                             System.out.println("Ok pressed");
                             viewReg.setVisible(false);
                             viewLog.setVisible(true);
+                           
+            viewLog.getBtnLogin().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(model.isLogin(viewLog.getUsername(), viewLog.getPassword()));
+                String username=viewLog.getUsername();
+                if(model.isLogin(viewLog.getUsername(), viewLog.getPassword())){
+                    viewMenu = new MenuGUI();
+                    viewLog.setVisible(false);
+                    viewMenu.setVisible(true);
+
+                    viewMenu.setProfile(model.getUserprofile(username));
+                    viewMenu.setPlaning(model.loadUserPlanning(username));
+                    
+                    
+                    
+                    
+                    
+         }
+        viewMenu.getBtnLogout().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                   System.out.println("LogOut Pressed");
+                   viewMenu.setVisible(false);
+                   viewLog.setVisible(true);
+                   
+            }
+                  });
+
+            }            
+        });
                         }});
                         
                         viewReg.getBtnCancel().addActionListener(new ActionListener(){

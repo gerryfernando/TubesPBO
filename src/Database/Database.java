@@ -45,12 +45,25 @@ public class Database {
             System.out.println("Error : "+ex.getMessage());
                 }
             
+    }
+    
+    public void disconnect(){
+        if(con != null){
+            try{
+            con.close();
+            con = null;
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+            }
         }
+        
+    }
+   
 
     
     
     public ArrayList<Transaksi> loadHistory(String username){
-        
+        connect();
         try{
             
             ArrayList<Transaksi> listT = new ArrayList();
@@ -77,24 +90,31 @@ public class Database {
                }
                listT.add(t);
             }
+            disconnect();
             return listT;
         }
         catch (Exception ex) {
             System.out.println("Error di Tampilin History");
+            disconnect();
             return null;
         }
+        
+        
     }
-        public void saveUser(User u){
-          
+    public void saveUser(User u){
+        connect();
         try {
             String query = "insert into user values('"+u.getName()+"','"+u.getUsername()+"','"+u.getPassword()+"','"+u.getUsia()+"','"+u.getGender()+"','"+u.getAddress()+"',"+u.getGaji()+","+u.getSaldo()+")";
             state.execute(query);
             System.out.println("saving user succeed");
         } catch (SQLException ex) {
-            System.out.println("saving user error : "+ex.getMessage());        }
+            System.out.println("saving user error : "+ex.getMessage());        
         }
+        disconnect();
+    }
         
-        public String loadPlanning(String username){
+    public String loadPlanning(String username){
+        connect();
         try{
             String query = "select * from planning where username='"+username+"'";
             rs = state.executeQuery(query);
@@ -105,7 +125,7 @@ public class Database {
             String s = "";
 
             while(rs.next()){
-
+                
                 int id = rs.getInt("id_planning");
                 String jenis = rs.getString("jenis_planning");
                 String mulai = rs.getString("Tanggal_Mulai");
@@ -114,13 +134,15 @@ public class Database {
                 int i=0;
                 String bulanmulai="";
                 String tahunmulai ="";
+                
                 while(mulai.charAt(i)!='-'){
                     bulanmulai+=mulai.charAt(i);
                     i++;
                 }
                 i=i+1;
-                while(i!=mulai.length()){
+                while(i < mulai.length()){
                     tahunmulai+=mulai.charAt(i);
+                    i++;
                 }                
                 i=0;
                 String bulanselesai="";
@@ -130,18 +152,18 @@ public class Database {
                     i++;
                 }
                 i=i+1;
-                while(i!=selesai.length()){
+                while(i<selesai.length()){
                     tahunselesai+=selesai.charAt(i);
-                }                
-                if(jenis == "Planning Harian"){
+                    i++;
+                }  
+                if(jenis.equals("Planning Harian")){
                     int estimasiHari = rs.getInt("estimasi_hari");
                     Planning_Harian p = new Planning_Harian(id , saldo , new Tanggal(Integer.parseInt(bulanmulai),Integer.parseInt(tahunmulai)) , new Tanggal(Integer.parseInt(bulanselesai),Integer.parseInt(tahunselesai)));
                     s = s + "Planning Harian : " + "\nID Planning : "+ p.getId() + "\n Pengeluaran yang disarankan : " +  
                             p.getDuitHari() +" per bulan" + "\nBulan Mulai : "+mulai+"\nBulan Selesai : "+selesai
                             +"\nEstimasi Hari : "+p.getEstimasiHari();
 
-                }
-                else if(jenis=="Planning Barang"){
+                }else if(jenis.equals("Planning Barang")){
                     int estimasiBln = rs.getInt("estimasi_bulan");
                     String barang = rs.getString("nama_barang");
                     int harga = rs.getInt("harga");
@@ -151,18 +173,20 @@ public class Database {
                     s = s + "Planning Barang : "+"\nID Planning : "+p.getId()+"\nNama Barang : "+p.getNamaBarang()+
                             "\nHarga Barang : "+p.getHarga()+"\nBulan Mulai : "+mulai+"\nBulan Selesai : "+selesai
                             +"\nEstimasi Bulan : "+p.getEstimasiBulan()+"\nTabungan per Bulan : "+p.getDuit();
-                    System.out.println(s);
                 } 
             }
+            disconnect();
             return s;
         }
         catch (Exception ex) {
             System.out.println("Error di Tampilin Planning "+ex.getMessage());
+            disconnect();
             return null;
         }
-        }
+    }
         
-         public ArrayList<User> loadUser(){
+    public ArrayList<User> loadUser(){
+        connect();
         try{
             ArrayList<User> listU = new ArrayList();
             state = con.createStatement();
@@ -180,15 +204,18 @@ public class Database {
             
             listU.add(u);
             }
+            disconnect();
             return listU;
         }
         catch (Exception ex) {
             System.out.println("Error di LIst User");
+            disconnect();
             return null;
         }  
     }
          
-        public boolean cekLogin(String username,String password){
+    public boolean cekLogin(String username,String password){
+        connect();
         boolean b=false;
 
             try {
@@ -202,7 +229,8 @@ public class Database {
         } catch (SQLException ex) {
             System.out.println("login error : "+ex.getMessage());   
         }
+        disconnect();
         return b;
-         }
+        }
     }
 
