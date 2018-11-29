@@ -12,7 +12,6 @@ package tubesdriver;
 public abstract class Planning {
 
 
-   protected Tanggal Tanggal_Mulai;
    protected int id;
 
     public int getId() {
@@ -23,15 +22,8 @@ public abstract class Planning {
         this.id = id;
     }
 
-   protected Tanggal Tanggal_Selesai;
+  
    
-   public Tanggal getEstimasi(){
-      return Tanggal.getEstimateTime(Tanggal_Mulai, Tanggal_Selesai);
-   }
-   
-   public int getEstimasiHari(){
-      return Tanggal.getEstimateTimeHari(Tanggal_Mulai, Tanggal_Selesai);
-   }
    
    public abstract String Show(); 
    

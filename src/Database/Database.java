@@ -104,7 +104,9 @@ public class Database {
         
     }
     public void saveUser(User u){
+     
         connect();
+        
         try {
             String query = "insert into user values('"+u.getName()+"','"+u.getUsername()+"','"+u.getPassword()+"','"+u.getUsia()+"','"+u.getGender()+"','"+u.getAddress()+"',"+u.getGaji()+","+u.getSaldo()+")";
             state.execute(query);
@@ -114,11 +116,40 @@ public class Database {
         }
         disconnect();
     }
+    
+       public void savePlanningB(Planning_Barang pb,String username){
+     
+        connect();
         
-    public String loadPlanning(String username){
+        try {
+           
+            String query = "insert into planning_barang values("+pb.getId()+",'"+username+"',"+pb.getEstimasiBulan()+",'"+pb.getNamaBarang()+"',"+pb.getHarga()+","+pb.getDuit()+")";
+            state.execute(query);
+            System.out.println("saving planning barang succeed");
+        } catch (SQLException ex) {
+            System.out.println("saving user error : "+ex.getMessage());        
+        }
+        disconnect();
+    }
+    public void savePlanningH(Planning_Harian ph, String username){
+     
+        connect();
+        
+        try {
+            String query = "insert into planning_harian values("+ph.getId()+","+ph.getDuitHari()+","+ph.getEstimasi()+",'"+username+"')";
+            state.execute(query);
+            System.out.println("saving planning harian succeed");
+        } catch (SQLException ex) {
+            System.out.println("saving user error : "+ex.getMessage());        
+        }
+        disconnect();
+    }
+    
+        
+    public String loadPlanningB(String username){
         connect();
         try{
-            String query = "select * from planning where username='"+username+"'";
+            String query = "select * from planning_barang where username='"+username+"'";
             rs = state.executeQuery(query);
             query = "select saldo from user where username = '"+username+"'";
             rs1=stmt.executeQuery(query);
@@ -129,53 +160,15 @@ public class Database {
             while(rs.next()){
                 
                 int id = rs.getInt("id_planning");
-                String jenis = rs.getString("jenis_planning");
-                String mulai = rs.getString("Tanggal_Mulai");
-                String selesai = rs.getString("Tanggal_Selesai");
-                int pengeluaranHari = rs.getInt("pengeluaranHari");
-                int i=0;
-                String bulanmulai="";
-                String tahunmulai ="";
-                
-                while(mulai.charAt(i)!='-'){
-                    bulanmulai+=mulai.charAt(i);
-                    i++;
-                }
-                i=i+1;
-                while(i < mulai.length()){
-                    tahunmulai+=mulai.charAt(i);
-                    i++;
-                }                
-                i=0;
-                String bulanselesai="";
-                String tahunselesai ="";
-                while(selesai.charAt(i)!='-'){
-                    bulanselesai+=selesai.charAt(i);
-                    i++;
-                }
-                i=i+1;
-                while(i<selesai.length()){
-                    tahunselesai+=selesai.charAt(i);
-                    i++;
-                }  
-                if(jenis.equals("Planning Harian")){
-                    int estimasiHari = rs.getInt("estimasi_hari");
-                    Planning_Harian p = new Planning_Harian(id , saldo , new Tanggal(Integer.parseInt(bulanmulai),Integer.parseInt(tahunmulai)) , new Tanggal(Integer.parseInt(bulanselesai),Integer.parseInt(tahunselesai)));
-                    s = s + "Planning Harian : " + "\nID Planning : "+ p.getId() + "\n Pengeluaran yang disarankan : " +  
-                            p.getDuitHari() +" per bulan" + "\nBulan Mulai : "+mulai+"\nBulan Selesai : "+selesai
-                            +"\nEstimasi Hari : "+p.getEstimasiHari();
-
-                }else if(jenis.equals("Planning Barang")){
                     int estimasiBln = rs.getInt("estimasi_bulan");
                     String barang = rs.getString("nama_barang");
                     int harga = rs.getInt("harga");
                     int tabungan = rs.getInt("tabunganBarang");
                     
-                    Planning_Barang p = new Planning_Barang(id, username, barang, harga, new Tanggal(Integer.parseInt(bulanmulai),Integer.parseInt(tahunmulai)) , new Tanggal(Integer.parseInt(bulanselesai),Integer.parseInt(tahunselesai)), estimasiBln, tabungan, saldo);
+                    Planning_Barang p = new Planning_Barang(id, username, barang, harga, estimasiBln, tabungan, saldo);
                     s = s + "Planning Barang : "+"\nID Planning : "+p.getId()+"\nNama Barang : "+p.getNamaBarang()+
-                            "\nHarga Barang : "+p.getHarga()+"\nBulan Mulai : "+mulai+"\nBulan Selesai : "+selesai
-                            +"\nEstimasi Bulan : "+p.getEstimasiBulan()+"\nTabungan per Bulan : "+p.getDuit();
-                } 
+                            "\nHarga Barang : "+p.getHarga()+"\nEstimasi Bulan : "+p.getEstimasiBulan()+"\nTabungan per Bulan : "+p.getDuit();
+                
             }
             disconnect();
             return s;
@@ -186,6 +179,37 @@ public class Database {
             return null;
         }
     }
+        public String loadPlanningH(String username){
+
+    connect();
+        try{
+            String query = "select * from planning_barang where username='"+username+"'";
+            rs = state.executeQuery(query);
+            query = "select saldo from user where username = '"+username+"'";
+            rs1=stmt.executeQuery(query);
+            rs1.next();
+            int saldo = rs1.getInt(1);
+            String s = "";
+
+            while(rs.next()){
+                
+                int id = rs.getInt("id_planning");
+                    int estimasiHari = rs.getInt("estimasi_hari");
+                    Planning_Harian p = new Planning_Harian(id , saldo ,estimasiHari);
+                    s = s + "Planning Harian : " + "\nID Planning : "+ p.getId() + "\n Pengeluaran yang disarankan : " +  
+                            p.getDuitHari() +" per bulan"+"\nEstimasi Hari : "+p.getEstimasi();
+            }
+            disconnect();
+            return s;
+        }
+        catch (Exception ex) {
+            System.out.println("Error di Tampilin Planning "+ex.getMessage());
+            disconnect();
+            return null;
+        }
+    }
+      
+
         
     public ArrayList<User> loadUser(){
         connect();
