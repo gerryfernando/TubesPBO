@@ -58,7 +58,8 @@ public class PengeluaranGUI extends javax.swing.JFrame {
         btnOkPengeluaran.setBackground(new java.awt.Color(0, 153, 0));
         btnOkPengeluaran.setText("Ok");
 
-        btnBackPengeluaran.setText("Back");
+        btnBackPengeluaran.setBackground(new java.awt.Color(255, 51, 0));
+        btnBackPengeluaran.setText("Cancel");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

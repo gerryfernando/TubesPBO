@@ -39,6 +39,9 @@ public class PendapatanGUI extends javax.swing.JFrame {
         tfDetailPendapatan = new javax.swing.JTextField();
         btnOkPendapatan = new javax.swing.JButton();
         btnBackPendapatan = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        tfTgl = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,14 +55,15 @@ public class PendapatanGUI extends javax.swing.JFrame {
 
         jLabel3.setText("Detail");
 
-        tfNominalPendapatan.setText("Masukan Nominal");
-
-        tfDetailPendapatan.setText("Masukkan Detail Transaksi");
-
         btnOkPendapatan.setBackground(new java.awt.Color(0, 204, 51));
         btnOkPendapatan.setText("OK");
 
-        btnBackPendapatan.setText("Back");
+        btnBackPendapatan.setBackground(new java.awt.Color(255, 0, 51));
+        btnBackPendapatan.setText("Cancel");
+
+        jLabel4.setText("Tanggal");
+
+        jLabel5.setText("Bulan-Tahun");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,7 +84,14 @@ public class PendapatanGUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnBackPendapatan)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnOkPendapatan)))
+                        .addComponent(btnOkPendapatan))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfTgl, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -97,7 +108,12 @@ public class PendapatanGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tfDetailPendapatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tfTgl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnOkPendapatan)
                     .addComponent(btnBackPendapatan))
@@ -133,7 +149,11 @@ public class PendapatanGUI extends javax.swing.JFrame {
         
         public void resetview(){
            tfDetailPendapatan.setText("");
-          tfNominalPendapatan.setText("");
+           tfNominalPendapatan.setText("");
+           tfTgl.setText("");
+        }
+        public String getTanggal(){
+            return tfTgl.getText();
         }
        
         public JButton getBtnOk(){
@@ -150,8 +170,11 @@ public class PendapatanGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField tfDetailPendapatan;
     private javax.swing.JTextField tfNominalPendapatan;
+    private javax.swing.JTextField tfTgl;
     // End of variables declaration//GEN-END:variables
 }

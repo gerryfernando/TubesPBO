@@ -5,7 +5,6 @@
  */
 package GUI;
 
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
@@ -38,22 +37,21 @@ public class RegisGUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        tfNamaReg = new javax.swing.JTextField();
-        tfUsernameReg = new javax.swing.JTextField();
-        tfUsiaReg = new javax.swing.JTextField();
-        cbGenderReg = new javax.swing.JComboBox<>();
-        tfAlamatReg = new javax.swing.JTextField();
-        btnCancelReg = new javax.swing.JButton();
-        btnOkReg = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        tfGajiReg = new javax.swing.JTextField();
-        pfPasswordReg = new javax.swing.JPasswordField();
+        tfNama = new javax.swing.JTextField();
+        tfUsername = new javax.swing.JTextField();
+        tfUsia = new javax.swing.JTextField();
+        tfAlamat = new javax.swing.JTextField();
+        tfGaji = new javax.swing.JTextField();
+        cbGender = new javax.swing.JComboBox<>();
+        pfPassword = new javax.swing.JPasswordField();
+        btnCancel = new javax.swing.JButton();
+        btnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setBackground(new java.awt.Color(204, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTRASI");
@@ -70,86 +68,102 @@ public class RegisGUI extends javax.swing.JFrame {
 
         jLabel7.setText("Alamat");
 
-        cbGenderReg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
-
-        btnCancelReg.setBackground(new java.awt.Color(204, 0, 0));
-        btnCancelReg.setText("Cancel");
-
-        btnOkReg.setBackground(new java.awt.Color(0, 153, 0));
-        btnOkReg.setText("Ok");
-
         jLabel8.setText("Gaji");
+
+        tfNama.setText("Nama");
+
+        tfUsername.setText("Username");
+
+        tfUsia.setText("Usia");
+
+        tfAlamat.setText("Alamat");
+
+        tfGaji.setText("Gaji");
+
+        cbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
+
+        pfPassword.setText("Password");
+
+        btnCancel.setBackground(new java.awt.Color(204, 0, 0));
+        btnCancel.setText("Cancel");
+
+        btnOk.setBackground(new java.awt.Color(0, 204, 51));
+        btnOk.setText("Ok");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfNamaReg)
-                    .addComponent(tfUsernameReg)
-                    .addComponent(tfUsiaReg)
-                    .addComponent(tfAlamatReg)
-                    .addComponent(tfGajiReg)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbGenderReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfNama)
+                            .addComponent(tfUsername)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnCancelReg)
-                                .addGap(49, 49, 49)
-                                .addComponent(btnOkReg)))
-                        .addGap(0, 112, Short.MAX_VALUE))
-                    .addComponent(pfPasswordReg))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(cbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                                        .addComponent(tfUsia)
+                                        .addComponent(tfAlamat)
+                                        .addComponent(tfGaji))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnCancel)
+                                        .addGap(62, 62, 62)
+                                        .addComponent(btnOk)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addComponent(jLabel1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tfNamaReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfUsernameReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(pfPasswordReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfUsiaReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(tfUsia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbGenderReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(cbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAlamatReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(tfAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(tfGajiReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                    .addComponent(tfGaji, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelReg)
-                    .addComponent(btnOkReg))
+                    .addComponent(btnCancel)
+                    .addComponent(btnOk))
                 .addContainerGap())
         );
 
@@ -173,53 +187,51 @@ public class RegisGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
-        public String getName(){
-            return tfNamaReg.getText();
+    /**
+     * @param args the command line arguments
+     */
+    public String getName(){
+            return tfNama.getText();
         }
         public String getUsername(){
-            return tfUsernameReg.getText();
+            return tfUsername.getText();
         }
         public String getPassword(){
-            return pfPasswordReg.getText();
+            return pfPassword.getText();
         }
         public int getUsia(){
-            return Integer.parseInt(tfUsiaReg.getText());
+            return Integer.parseInt(tfUsia.getText());
         }
         public String getGender(){
-            int i = cbGenderReg.getSelectedIndex();
-            return cbGenderReg.getItemAt(i);
+            int i = cbGender.getSelectedIndex();
+            return cbGender.getItemAt(i);
         }
         public String getAlamat(){
-            return tfAlamatReg.getText();
+            return tfAlamat.getText();
         }
         public int getGaji(){
-            return Integer.parseInt(tfGajiReg.getText());
+            return Integer.parseInt(tfGaji.getText());
         }
         public void resetview(){
-            tfNamaReg.setText("");
-            tfUsernameReg.setText("");
-            pfPasswordReg.setText("password");
-            tfUsiaReg.setText("");
-            cbGenderReg.setSelectedIndex(0);
-            tfAlamatReg.setText("");
-            tfGajiReg.setText("");
+            tfNama.setText("Nama");
+            tfUsername.setText("Username");
+            pfPassword.setText("Password");
+            tfUsia.setText("Usia");
+            cbGender.setSelectedIndex(0);
+            tfAlamat.setText("Alamat");
+            tfGaji.setText("Gaji");
         }
         public JButton getBtnOk(){
-            return btnOkReg;
+            return btnOk;
         }
         public JButton getBtnCancel(){
-            return btnCancelReg;
-        }
-        public void addActionListener(ActionListener e){
-            btnOkReg.addActionListener(e);
-            btnCancelReg.addActionListener(e);
+            return btnCancel;
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelReg;
-    private javax.swing.JButton btnOkReg;
-    private javax.swing.JComboBox<String> cbGenderReg;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnOk;
+    private javax.swing.JComboBox<String> cbGender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -229,11 +241,11 @@ public class RegisGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField pfPasswordReg;
-    private javax.swing.JTextField tfAlamatReg;
-    private javax.swing.JTextField tfGajiReg;
-    private javax.swing.JTextField tfNamaReg;
-    private javax.swing.JTextField tfUsernameReg;
-    private javax.swing.JTextField tfUsiaReg;
+    private javax.swing.JPasswordField pfPassword;
+    private javax.swing.JTextField tfAlamat;
+    private javax.swing.JTextField tfGaji;
+    private javax.swing.JTextField tfNama;
+    private javax.swing.JTextField tfUsername;
+    private javax.swing.JTextField tfUsia;
     // End of variables declaration//GEN-END:variables
 }

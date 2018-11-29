@@ -23,7 +23,6 @@ public class Application {
     
     public Application(){
         userList=new ArrayList();
-        planlist=new ArrayList();
         db=new Database();
         db.connect();
         loadUserProfile();
@@ -46,7 +45,6 @@ public class Application {
             if(u.getUsername().equals(username)){
               s =s+ "Nama : "+u.getName()+"\nUsia : "+u.getUsia()+"\nJenis Kelamin : "+u.getGender()+"\nAlamat : "+u.getAddress()+"\nGaji : "+u.getGaji()+"\nSaldo : "+u.getSaldo();
                 
-           
             }
         }
         return s;

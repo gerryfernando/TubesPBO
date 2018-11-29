@@ -76,7 +76,8 @@ public class PlanningBarangGUI extends javax.swing.JFrame {
         btnokbarang.setBackground(new java.awt.Color(0, 153, 0));
         btnokbarang.setText("Ok");
 
-        btnbackbarang.setText("Kembali");
+        btnbackbarang.setBackground(new java.awt.Color(255, 0, 51));
+        btnbackbarang.setText("Cancel");
         btnbackbarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbackbarangActionPerformed(evt);

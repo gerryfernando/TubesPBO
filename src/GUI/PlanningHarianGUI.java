@@ -61,7 +61,8 @@ public class PlanningHarianGUI extends javax.swing.JFrame {
         btnokharian.setBackground(new java.awt.Color(0, 153, 0));
         btnokharian.setText("Ok");
 
-        btnbackharian.setText("Kembali");
+        btnbackharian.setBackground(new java.awt.Color(255, 0, 51));
+        btnbackharian.setText("Cancel");
         btnbackharian.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbackharianActionPerformed(evt);

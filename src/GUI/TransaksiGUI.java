@@ -108,9 +108,12 @@ public class TransaksiGUI extends javax.swing.JFrame {
      public JButton getBtnPendapatan(){
             return btnPendapatanTransaksi;
         }
-        public JButton getBtnPengeluaran(){
+    public JButton getBtnPengeluaran(){
             return btnPengeluaranTransaksi;
         }
+    public JButton getBtnBack(){
+        return btnBackTransaksi;
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackTransaksi;

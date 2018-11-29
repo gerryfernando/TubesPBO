@@ -73,6 +73,14 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnOkPendapatan" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="tfTgl" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -95,7 +103,13 @@
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tfDetailPendapatan" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="91" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfTgl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="53" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnOkPendapatan" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnBackPendapatan" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -126,14 +140,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfNominalPendapatan">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Masukan Nominal"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfDetailPendapatan">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Masukkan Detail Transaksi"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnOkPendapatan">
           <Properties>
@@ -145,7 +153,22 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnBackPendapatan">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Back"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tanggal"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tfTgl">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bulan-Tahun"/>
           </Properties>
         </Component>
       </SubComponents>
